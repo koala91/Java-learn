@@ -1,6 +1,9 @@
-package org.example;
+package com.phone;
 
-public class PhoneMaker {
+
+import com.phone.parts.*;
+
+public class PhoneMarker {
     public static void main(String[] args) {
         // 创建一个Phone的实例
         Phone phone = new Phone();
@@ -23,12 +26,13 @@ public class PhoneMaker {
         mainboard.memory = new Memory();
         mainboard.memory.producer = "三星";
         mainboard.memory.capacity = 4;
-        
+
         mainboard.storage = new Storage();
         mainboard.storage.producer = "Intel";
         mainboard.storage.capacity = 256;
 
         phone.mainboard = mainboard;
 
+        System.out.println(phone.mainboard.cpu.producer);
     }
 }
