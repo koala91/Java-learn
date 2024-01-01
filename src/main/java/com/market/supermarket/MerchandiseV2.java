@@ -12,4 +12,20 @@ public class MerchandiseV2 {
         double netIncome = soldPrice - purchasePrice;
         System.out.println("商品名字叫做" + name + ",id是" + id + "。商品售价是" + soldPrice + "。商品进价是" + purchasePrice + "。商品的库存是" + count + "。商品单个的毛利润是" + netIncome);
     }
+
+    public double calculateProfit() {
+        double profit = soldPrice - purchasePrice;
+        if (profit <= 0) {
+            return  0;
+        }
+        return  profit;
+    }
+
+    public double getCurrentCount() {
+        return  count;
+    }
+
+    public  int getIntSoldPrice() {
+        return (int) soldPrice;
+    }
 }
