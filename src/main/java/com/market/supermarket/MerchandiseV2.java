@@ -28,4 +28,41 @@ public class MerchandiseV2 {
     public  int getIntSoldPrice() {
         return (int) soldPrice;
     }
+
+    public double buy(int countToBuy) {
+        if (count < countToBuy) {
+            System.out.println("商品库存不足");
+            return -1;
+        }
+        System.out.println("商品单价为：" + purchasePrice);
+
+        int fullPriceCount = countToBuy / 2 + countToBuy % 2; // 全价数量
+        int halfPriceCount = countToBuy - fullPriceCount; // 半价数量
+        double totalCost = purchasePrice * fullPriceCount + halfPriceCount * purchasePrice / 2;
+
+        count = count - countToBuy;
+        return  totalCost;
+    }
+
+    public double buyAndPrintLeft(int countToBuy, boolean printLeft) {
+        if (count < countToBuy) {
+            System.out.println("商品库存不足");
+            if (printLeft) {
+                System.out.println("商品库存为：" + count);
+            }
+            return -1;
+        }
+        System.out.println("商品单价为：" + purchasePrice);
+        int fullPriceCount = countToBuy / 2 + countToBuy % 2; // 全价数量
+        int halfPriceCount = countToBuy - fullPriceCount; // 半价数量
+        double totalCost = purchasePrice * fullPriceCount + halfPriceCount * purchasePrice / 2;
+
+        count = count - countToBuy;
+        if (printLeft) {
+            System.out.println("商品剩余库存为：" + count);
+        }
+        return  totalCost;
+    }
+
+    // 函数的参数可以是任何类型，包括自定义类型。
 }
