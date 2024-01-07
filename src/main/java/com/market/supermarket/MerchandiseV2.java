@@ -7,6 +7,13 @@ public class MerchandiseV2 {
     public double soldPrice;
     public double purchasePrice;
 
+    public void init(String name, String id, int count, double soldPrice, double purchasePrice) {
+        this.name = name;
+        this.id = id;
+        this.count = count;
+        this.soldPrice = soldPrice;
+        this.purchasePrice = purchasePrice;
+    }
 //    方法
     public void describe() {
         double netIncome = soldPrice - purchasePrice;
