@@ -16,6 +16,16 @@ public class MerchandiseV2WithConstructor {
         this.soldPrice = soldPrice;
         this.purchasePrice = purchasePrice;
     }
+
+    public MerchandiseV2WithConstructor(String name, String id, int count, double soldPrice) {
+        this(name, id, count, soldPrice, soldPrice * 0.8);
+    }
+
+    public MerchandiseV2WithConstructor() {
+        this("无名", "000", 0, 1, 1.1);
+    }
+
+
     public void describe() {
         double netIncome = soldPrice - purchasePrice;
         System.out.println("商品名字叫做" + name + ",id是" + id + "。商品售价是" + soldPrice + "。商品进价是" + purchasePrice + "。商品的库存是" + count + "。商品单个的毛利润是" + netIncome);
