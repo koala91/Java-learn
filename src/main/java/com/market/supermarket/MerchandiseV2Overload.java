@@ -8,6 +8,11 @@ public class MerchandiseV2Overload {
     public double purchasePrice;
     public static double DISCOUNT_FOR_VIP = 0.95; // 静态变量（在整个java程序中只有一个，一旦变化，所有用到的地方都变化）
 
+//    静态方法使用static修饰符(名字不需要约定成俗全大写。没this)
+    public static double getDiscountForVip() {
+        return DISCOUNT_FOR_VIP;
+    }
+
     public void init(String name, String id, int count, double soldPrice, double purchasePrice) {
         this.name = name;
         this.id = id;

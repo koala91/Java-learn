@@ -3,6 +3,7 @@ package com.market;
 import com.market.supermarket.MerchandiseV2Overload;
 
 import static com.market.supermarket.MerchandiseV2Overload.DISCOUNT_FOR_VIP;
+import static com.market.supermarket.MerchandiseV2Overload.getDiscountForVip;
 
 public class MerchandiseV2OverrideBuyAppMain {
     public static void main(String[] args) {
@@ -33,6 +34,9 @@ public class MerchandiseV2OverrideBuyAppMain {
         double costVip3 = merchandise2.buy(10, true);
         System.out.println(costVip3);
         merchandise2.describe();
+
+//        引入静态方法并调用
+        System.out.println(getDiscountForVip());
 
 
 
