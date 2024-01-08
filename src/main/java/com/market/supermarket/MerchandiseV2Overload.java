@@ -6,6 +6,7 @@ public class MerchandiseV2Overload {
     public  int count;
     public double soldPrice;
     public double purchasePrice;
+    public static double DISCOUNT_FOR_VIP = 0.95; // 静态变量（在整个java程序中只有一个，一旦变化，所有用到的地方都变化）
 
     public void init(String name, String id, int count, double soldPrice, double purchasePrice) {
         this.name = name;
@@ -34,7 +35,7 @@ public class MerchandiseV2Overload {
         this.count = this.count - count;
         double totalCost = count * soldPrice;
         if (isVip) {
-            return totalCost * 0.95;
+            return totalCost * DISCOUNT_FOR_VIP;
         } else {
              return totalCost;
         }
