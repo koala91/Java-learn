@@ -23,18 +23,42 @@ public class PhoneExtendsMerchandise extends Merchandise{
             String brand,
             String os
     ) {
+//        this.screenSize = screenSize;
+//        this.cupHZ = cupHZ;
+//        this.memoryG = memoryG;
+//        this.storageG = storageG;
+//        this.brand = brand;
+//        this.os = os;
+//
+//        this.setName(name);
+//        this.setId(id);
+//        this.setCount(count);
+//        this.setSoldPrice(soldPrice);
+//        this.setPurchasePrice(purchasePrice);
+//        使用super调用父类的构造方法
+        super(name, id, count, soldPrice, purchasePrice);
+        init(screenSize, cupHZ, memoryG, storageG, brand, os);
+    }
+
+    public PhoneExtendsMerchandise() {
+        super("无名", "000", 0, 1.1, 1);
+        init(4.5, 5.6, 6, 128, "UKnown", "UKnown");
+    }
+
+    public void init(
+            double screenSize,
+            double cupHZ,
+            int memoryG,
+            int storageG,
+            String brand,
+            String os
+    ) {
         this.screenSize = screenSize;
         this.cupHZ = cupHZ;
         this.memoryG = memoryG;
         this.storageG = storageG;
         this.brand = brand;
         this.os = os;
-
-        this.setName(name);
-        this.setId(id);
-        this.setCount(count);
-        this.setSoldPrice(soldPrice);
-        this.setPurchasePrice(purchasePrice);
     }
 
 //    覆盖
