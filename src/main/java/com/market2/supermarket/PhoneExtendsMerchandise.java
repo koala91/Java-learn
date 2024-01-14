@@ -8,6 +8,7 @@ public class PhoneExtendsMerchandise extends Merchandise{
     private int storageG;
     private String brand;
     private String os;
+    private static int MAX_BUY_ONE_ORDER = 5; // 最多购买5个
 
     public PhoneExtendsMerchandise(
             String name,
@@ -36,10 +37,40 @@ public class PhoneExtendsMerchandise extends Merchandise{
         this.setPurchasePrice(purchasePrice);
     }
 
-    public void describePhone() {
+//    覆盖
+
+    @Override
+    public double buy(int count) {
+        if (count > MAX_BUY_ONE_ORDER) {
+            System.out.println("购买失败，手机一次最多只能购买" + MAX_BUY_ONE_ORDER + "个");
+            return -2;
+        }
+        return super.buy(count);
+    }
+
+    @Override
+    public String getName() {
+        return this.brand + "：" + this.os + "：" + name;
+    }
+
+    public void describe() {
         System.out.println("此商品属性如下：");
-        describe();
+        super.describe();
         System.out.println("手机厂商为" + brand + "；系统为" + os + ";硬件配置如下：\n" + "屏幕：" + screenSize + "寸\n" + "cpu主频" + cupHZ + "GHz\n" + "内存" + memoryG + "Gb\n" + "存储空间" + storageG + "Gb\n");
+    }
+
+    public PhoneExtendsMerchandise getThisPhone () {
+        return this;
+    }
+//    使用super可以调用父类的public属性
+    public void accessParentProps() {
+        System.out.println("父类的name属性：" + super.name);
+    }
+
+    public void useSuper () {
+        super.describe();
+        super.buy(66);
+        System.out.println("父类的count属性" + super.count);
     }
 
     public double getScreenSize() {

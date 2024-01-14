@@ -17,6 +17,18 @@ public class UsePhoneMerchandise {
                 "小米",
                 "安卓"
         );
-        phoneExtendsMerchandise.describePhone();
+        phoneExtendsMerchandise.describe();
+        System.out.println();
+
+        System.out.println(phoneExtendsMerchandise.getName());
+        System.out.println();
+
+        phoneExtendsMerchandise.buy(100);
+        phoneExtendsMerchandise.buy(3);
+        System.out.println();
+
+        phoneExtendsMerchandise.accessParentProps();
+        phoneExtendsMerchandise.useSuper();
+
     }
 }

@@ -33,9 +33,11 @@ public class Merchandise {
     }
     public double buy(int count) {
         if (this.count < count) {
+            System.out.println("购买失败，库存不够");
             return  -1;
         }
         this.count = this.count - count;
+        System.out.println("购买成功，花费为" + count * soldPrice);
         return count * soldPrice;
     }
     public String getName() {
