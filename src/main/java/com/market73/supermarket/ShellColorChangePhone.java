@@ -29,4 +29,12 @@ public class ShellColorChangePhone extends Phone{
         double profit = super.calculateProfit();
         return profit + profit * 0.1;
     }
+    public double buy(int count) {
+        System.out.println("ShellColorChangePhone里的buy(int count)");
+        if (count < 2) {
+            System.out.println("买一送一了解一下，不单卖哦！");
+            return -1;
+        }
+        return super.buy(count);
+    }
 }

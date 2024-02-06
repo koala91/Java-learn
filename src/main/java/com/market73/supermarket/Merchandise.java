@@ -40,6 +40,15 @@ public class Merchandise {
         return cost;
     }
 
+    public double buy(boolean reallyBuy) {
+        System.out.println("Merchandise里的buy(boolean reallyBuy)");
+        if (reallyBuy) {
+            return this.buy(1);
+        } else {
+            return -1;
+        }
+    }
+
     public String getName() {
         return name;
     }
