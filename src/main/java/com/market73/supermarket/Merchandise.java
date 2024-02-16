@@ -66,6 +66,17 @@ public class Merchandise {
         return Objects.hash(getName(), getId(), getCount(), getSoldPrice(), getPurchasePrice());
     }
 
+    @Override
+    public String toString() {
+        return "Merchandise{" +
+                "name='" + name + '\'' +
+                ", id='" + id + '\'' +
+                ", count=" + count +
+                ", soldPrice=" + soldPrice +
+                ", purchasePrice=" + purchasePrice +
+                '}';
+    }
+
     public String getName() {
         return name;
     }

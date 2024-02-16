@@ -24,6 +24,18 @@ public class ShellColorChangePhone extends Phone{
         System.out.println("壳色随着屏幕色变的功能开启状态：" + enableShellColorChange);
     }
 
+    @Override
+    public String toString() {
+        return "ShellColorChangePhone{" +
+                "enableShellColorChange=" + enableShellColorChange +
+                ", name='" + name + '\'' +
+                ", id='" + id + '\'' +
+                ", count=" + count +
+                ", soldPrice=" + soldPrice +
+                ", purchasePrice=" + purchasePrice +
+                '}';
+    }
+
     public double calculateProfit() {
         // 手机不好卖，厂家提供10个点的返点
         double profit = super.calculateProfit();

@@ -44,6 +44,23 @@ public class Phone extends  Merchandise{
                 "存储空间" + storageG + "Gb");
     }
 
+    @Override
+    public String toString() {
+        return "Phone{" +
+                "screenSize=" + screenSize +
+                ", cpuHz=" + cpuHz +
+                ", memoryG=" + memoryG +
+                ", storageG=" + storageG +
+                ", brand='" + brand + '\'' +
+                ", os='" + os + '\'' +
+                ", name='" + name + '\'' +
+                ", id='" + id + '\'' +
+                ", count=" + count +
+                ", soldPrice=" + soldPrice +
+                ", purchasePrice=" + purchasePrice +
+                '}';
+    }
+
     public double getScreenSize() {
         return screenSize;
     }
