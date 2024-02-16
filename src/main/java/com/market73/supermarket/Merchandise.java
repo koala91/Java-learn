@@ -1,5 +1,7 @@
 package com.market73.supermarket;
 
+import java.util.Objects;
+
 public class Merchandise {
     public String name;
     public String id;
@@ -47,6 +49,21 @@ public class Merchandise {
         } else {
             return -1;
         }
+    }
+    // hashCode 和 equals是我们最常覆盖的两个方法
+    // 覆盖的原则是，equals为true，hashCode就应该相等。这是一种约定俗成的规范
+    // 即equals为true是hashCode相等的充分非必要条件，hashCode相等是equals为true的必要不充分条件
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Merchandise)) return false;
+        Merchandise that = (Merchandise) o;
+        return getCount() == that.getCount() && Double.compare(getSoldPrice(), that.getSoldPrice()) == 0 && Double.compare(getPurchasePrice(), that.getPurchasePrice()) == 0 && Objects.equals(getName(), that.getName()) && Objects.equals(getId(), that.getId());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getName(), getId(), getCount(), getSoldPrice(), getPurchasePrice());
     }
 
     public String getName() {

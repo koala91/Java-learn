@@ -29,10 +29,10 @@ public class Phone extends  Merchandise{
         }
         return  super.buy(count);
     }
-
-    public String getName () {
-        return this.brand + ":" + this.os + ":" + super.getName();
-    }
+//    下面getName方法注释了，10和100的商品就可以相等了
+//    public String getName () {
+//        return this.brand + ":" + this.os + ":" + super.getName();
+//    }
 
     public void describe() {
         System.out.println("此手机商品属性如下");
